@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Pushkar!</title>
+    <title>Happy Birthday Pushkar</title>
     <style>
         body {
             margin: 0;
@@ -12,50 +12,69 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #fff5f8;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000; /* Modern Black */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             overflow: hidden;
-            /* Floral Border using Emojis/Patterns */
-            border: 30px solid transparent;
-            border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext y='50' font-size='40'%3E🌸%3C/text%3E%3Ctext x='50' y='90' font-size='40'%3E🌼%3C/text%3E%3C/svg%3E") 30 round;
+            /* Medium Sized Floral Border */
+            border: 25px solid transparent;
+            border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext y='50' font-size='40'%3E🌸%3C/text%3E%3Ctext x='50' y='90' font-size='40'%3E🌺%3C/text%3E%3C/svg%3E") 30 round;
+            box-sizing: border-box;
         }
 
         .container {
             text-align: center;
+            padding: 20px;
         }
 
         h1 {
-            font-size: 4rem;
-            color: #d81b60;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            animation: bounce 2s infinite;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-30px) scale(1.1);}
-            60% {transform: translateY(-15px);}
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: #888;
-            margin-top: 10px;
+        .line-1 {
+            font-size: 2.5rem;
+            color: #fce4ec;
             opacity: 0;
-            animation: fadeIn 3s forwards;
-            animation-delay: 1s;
+            transform: translateY(20px);
+            animation: appear 1s ease-out forwards;
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
+        .line-2 {
+            font-size: 5rem;
+            color: #ff4081; /* Vibrant Pink */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: appear 1s ease-out forwards;
+            animation-delay: 0.8s; /* Appears after first line */
+        }
+
+        /* Modern Fade-In Appear Animation */
+        @keyframes appear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 64, 129, 0.2) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
         }
     </style>
 </head>
 <body>
 
+    <div class="glow"></div>
     <div class="container">
-        <h1>Happiest Birthday Pushkar!</h1>
-        <div class="subtitle">Wishing you a blooming year ahead 🌸</div>
+        <div class="line-1">Happiest Birthday</div>
+        <h1 class="line-2">Pushkar</h1>
     </div>
 
 </body>
